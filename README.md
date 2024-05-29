@@ -249,6 +249,52 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
     }
     ```
 
+## Get All Products
+
+**Endpoint:** `/products`
+
+**Method:** `GET`
+
+**Condition:** If everything is OK and products exist in the database.
+
+**Code:** `200 OK`
+
+**Content example:**
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "Product 1",
+            "image": "https://example.com/product1.jpg",
+            "imageMarket": "https://example.com/market1.jpg",
+            "owner": "Owner 1",
+            "alamat": "Address 1",
+            "phone": 1234567890,
+            "rate": 4.5,
+            "sold": 100,
+            "postdate": "2022-01-01T00:00:00.000Z",
+            "categories": ["Category 1", "Category 2"],
+            "description": "Description 1"
+        },
+        {
+            "id": "2",
+            "name": "Product 2",
+            "image": "https://example.com/product2.jpg",
+            "imageMarket": "https://example.com/market2.jpg",
+            "owner": "Owner 2",
+            "alamat": "Address 2",
+            "phone": 2345678901,
+            "rate": 4.0,
+            "sold": 200,
+            "postdate": "2022-02-02T00:00:00.000Z",
+            "categories": ["Category 3", "Category 4"],
+            "description": "Description 2"
+        }
+    ]
+}
+```
 ## Middleware
 - **Handle Invalid Method**
   - Returns a 405 response if an HTTP method is not allowed on a specific endpoint.
