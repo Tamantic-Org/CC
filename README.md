@@ -61,7 +61,9 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
       "name": "Name",
       "email": "email@example.com",
       "phone": "+6281234567890",
-      "password": "password"
+      "password": "password",
+      "userImage" : "image (tipe file)"
+    
     }
     ```
   - **Response:**
