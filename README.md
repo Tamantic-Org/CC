@@ -67,12 +67,14 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
   - **Response:**
     ```json
     {
-      "id": "user-id",
-      "name": "Name",
-      "email": "email@example.com",
-      "phone": "81234567890",
-      "registerDate": "2023-05-28T00:00:00.000Z",
-      "updatedDate": "2023-05-28T00:00:00.000Z"
+    "id": "user-id",
+    "name": "Name",
+    "email": "email@example.com",
+    "phone": "81234567890",
+    "registerDate": "2023-05-28T00:00:00.000Z",
+    "updatedDate": "2023-05-28T00:00:00.000Z",
+    "imageUrl": "https://storage.googleapis.com/user-bucket/user-image.jpg",
+    "isOwner": false
     }
     ```
 
@@ -106,12 +108,14 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
   - **Response:**
     ```json
     {
-      "id": "user-id",
-      "name": "Name",
-      "email": "email@example.com",
-      "phone": "81234567890",
-      "registerDate": "2023-05-28T00:00:00.000Z",
-      "updatedDate": "2023-05-28T00:00:00.000Z"
+    "id": "user-id",
+    "name": "Name",
+    "email": "email@example.com",
+    "phone": "81234567890",
+    "registerDate": "2023-05-28T00:00:00.000Z",
+    "updatedDate": "2023-05-28T00:00:00.000Z",
+    "imageUrl": "https://storage.googleapis.com/user-bucket/user-image.jpg",
+    "isOwner": false
     }
     ```
 
@@ -121,15 +125,16 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
   - **Response:**
     ```json
     {
-      "data": [
-        {
-          "id": "user-id",
-          "name": "Name",
-          "phone": "81234567890",
-          "registerDate": "2023-05-28T00:00:00.000Z"
-        },
-        ...
-      ]
+    "data": [
+    {
+      "id": "user-id",
+      "name": "Name",
+      "phone": "81234567890",
+      "registerDate": "2023-05-28T00:00:00.000Z",
+      "imageUrl": "https://storage.googleapis.com/user-bucket/user-image.jpg"
+    },
+    ...
+    ]
     }
     ```
 
