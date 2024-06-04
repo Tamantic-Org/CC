@@ -62,7 +62,7 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
       "email": "email@example.com",
       "phone": "+6281234567890",
       "password": "password",
-      "userImage" : "image (tipe file)"
+      "imageUrl" : "https://example.com/user-image.jpg"
     
     }
     ```
@@ -99,6 +99,7 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
         "name": "Name",
         "phone": "81234567890",
         "email": "email@example.com",
+        "imageUrl": "https://example.com/user-image.jpg",
         "token": "jwt-token"
       }
     }
@@ -132,7 +133,9 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
       "id": "user-id",
       "name": "Name",
       "phone": "81234567890",
+      "password": "xyz1@1",
       "registerDate": "2023-05-28T00:00:00.000Z",
+      "updatedDate": "2023-05-28T00:00:00.000Z",
       "imageUrl": "https://storage.googleapis.com/user-bucket/user-image.jpg"
     },
     ...
@@ -156,8 +159,8 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
       "sold": "100",
       "categories": "category1,category2",
       "description": "Product description",
-      "productImage": "file",
-      "marketImage": "file"
+      "productImageUrl": "https://example.com/product-image.jpg",
+      "marketImageUrl": "https://example.com/market-image.jpg"
     }
     ```
   - **Response:**
@@ -257,6 +260,38 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
       ]
     }
     ```
+
+- **Search Product By Name**
+  - **URL:** `/product/search`
+  - **Method:** `POST`
+  - **Body:**
+    ```json
+    {
+      "name": "Product Name"
+    }
+    ```
+  - **Response:**
+    ```json
+    {
+      "data": [
+        {
+          "id": "product-id",
+          "name": "Product Name",
+          "image": "https://example.com/product1.jpg",
+          "imageMarket": "https://example.com/market1.jpg",
+          "owner": "Owner Name",
+          "alamat": "Address",
+          "phone": 1234567890,
+          "rate": 4.5,
+          "sold": 100,
+          "postdate": "2022-01-01T00:00:00.000Z",
+          "categories": ["Category1", "Category2"],
+          "description": "Product description"
+        }
+        ...
+      ]
+    }
+    ```    
 
 ## Get All Products
 
