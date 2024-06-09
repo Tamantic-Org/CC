@@ -11,6 +11,7 @@ Tamantic API is a backend API that provides user registration, login, user manag
 - [Endpoints](#endpoints)
   - [User](#user)
   - [Product](#product)
+  - [Image Classification](#image-classification)
 - [Middleware](#middleware)
 - [License](#license)
 
@@ -18,6 +19,7 @@ Tamantic API is a backend API that provides user registration, login, user manag
 - Node.js
 - Google Cloud SDK (gcloud) installed and configured
 - Google Cloud Firestore and Google Cloud Storage enabled in Google Cloud Console
+- TensorFlow.js for Node
 
 ## Installation
 1. Clone this repository:
@@ -35,9 +37,20 @@ Tamantic API is a backend API that provides user registration, login, user manag
 1. Create a `.env` file in the root directory and add your Google Cloud configuration:
     ```plaintext
     GOOGLE_APPLICATION_CREDENTIALS=path/to/your/credentials.json
+    PRODUCT_BUCKET_NAME=your-product-bucket-name
+    MARKET_BUCKET_NAME=your-market-bucket-name
+    USER_BUCKET_NAME=your-user-bucket-name
+    JWT_SECRET=your-jwt-secret
+    MODEL_URL=https://storage.googleapis.com/model-storage-tamantic/model.json
     ```
 
 2. Ensure you have the appropriate Google Cloud credentials and access to Firestore and Storage.
+
+## Running the Server
+To run the server, use the following command:
+```bash
+node server.js
+
 
 ## Running the Server
 To run the server, use the following command:
@@ -339,6 +352,25 @@ The API endpoints are hosted at: https://tamantic-api-fciqhbrq7a-et.a.run.app
     ]
 }
 ```
+### Image Classification
+- **Classify Image**
+  - **URL:** `/predict`
+  - **Method:** `POST`
+  - **Body:**
+    ```json
+    {
+      "image": "base64-encoded-image"
+    }
+    ```
+  - **Response:**
+    ```json
+    {
+      "result": "Label",
+      "explanation": "Explanation",
+      "confidenceScore": 98.76
+    }
+    ```
+
 ## Middleware
 - **Handle Invalid Method**
   - Returns a 405 response if an HTTP method is not allowed on a specific endpoint.
